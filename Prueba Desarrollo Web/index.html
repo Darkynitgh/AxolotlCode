@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Patitas</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Registro de Consultas - Veterinaria Patitas</h1>
+    
+    <form id="consultaForm">
+        <label for="mascota">Nombre de la Mascota:</label>
+        <input type="text" id="mascota" name="mascota" required>
+        
+        <label for="dueno">Nombre del Dueño:</label>
+        <input type="text" id="dueno" name="dueno" required>
+        
+        <label for="fecha">Fecha de la Consulta:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="observaciones"></textarea>
+        
+        <button type="submit">Registrar Consulta</button>
+    </form>
+    
+    <div id="tablaConsultas">
+        <h2>Consultas Registradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de la Mascota</th>
+                    <th>Nombre del Dueño</th>
+                    <th>Fecha</th>
+                    <th>Observaciones</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaBody">
+                <!-- Las filas dinámicas se agregarán aquí -->
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

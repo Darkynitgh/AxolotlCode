@@ -1,0 +1,234 @@
+/* Definición de variables de color */
+:root {
+    --color-principal: #FF5A8C; /* Rosa principal del logo */
+    --color-fondo: #FFF3F7; /* Fondo rosa claro */
+    --color-fondo-secundario: #e9c9d1; /* Fondo blanco suave */
+    --color-verde: #231942; /* Morado oscuro para botones secundarios */
+    --color-texto: #231942; /* Morado oscuro para texto */
+    --color-alerta-error: #FF5A8C; /* Rosa para errores */
+}
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    background-color: var(--color-fondo); /* Fondo rosa claro */
+    color: var(--color-texto); /* Texto oscuro */
+    padding: 30px;
+}
+
+
+/* Estilo del título principal */
+h1 {
+    text-align: center;
+    color: var(--color-texto); /* Morado oscuro */
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* Estilo del formulario */
+form {
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada y suave */
+    padding: 30px;
+    background-color: #FFFFFF; /* Fondo blanco para formulario */
+}
+
+form label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--color-texto); /* Color de texto oscuro */
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-principal); /* Bordes en rosa principal */
+    font-size: 1rem;
+    background-color: #FFFFFF; /* Fondo blanco */
+}
+
+/* Estilo de botón */
+form button {
+ background-color: var(--color-principal); /* Rosa principal */
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none;
+    transition: background 0.3s ease;
+    font-weight: 600; /* Fuente más atractiva y legible */
+}
+
+form button:hover {
+    background-color: var(--color-verde); /* Cambia a morado oscuro */
+}
+
+/* Estilo para el botón de editar */
+.btn-editar {
+    background-color: var(--color-verde); /* Morado oscuro */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(35, 25, 66, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+    background-color: var(--color-principal); /* Rosa principal */
+}
+
+/* Estilo para el botón de eliminar */
+.btn-eliminar {
+    background-color: var(--color-principal); /* Rosa principal */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 90, 140, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: var(--color-verde); /* Morado oscuro */
+}
+
+/* Ajuste para el título de la tabla dentro de la sección */
+#tablaConsultas h2 {
+    margin-top: 40px;
+    color: var(--color-texto); /* Morado oscuro */
+    text-align: center;
+}
+
+
+/* Estilo de la tabla de consultas */
+#tablaConsultas {
+    margin-top: 40px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+#tablaConsultas table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white; /* Fondo blanco */
+}
+
+#tablaConsultas th,
+#tablaConsultas td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-principal);
+}
+
+#tablaConsultas th {
+    background-color: var(--color-verde); /* Morado oscuro */
+    color: white;
+    font-weight: bold;
+}
+
+#tablaConsultas tr:nth-child(even) {
+    background-color: var(--color-fondo); /* Color suave */
+}
+
+#tablaConsultas tr:hover {
+    background-color: var(--color-fondo-secundario); /* Resalta fila al pasar el mouse */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form label,
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.95rem;
+    }
+
+    #tablaConsultas table {
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive for iPhone 14 Plus */
+@media (max-width: 430px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    form label,
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    #tablaConsultas table {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilo para la alerta centrada */
+.alert-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    max-width: 80%;
+    width: auto;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+/* Estilos adicionales según el tipo de alerta */
+.alert-success {
+    background-color: var(--color-verde); /* Morado oscuro para éxito */
+    color: white;
+}
+
+.alert-danger {
+    background-color: var(--color-principal); /* Rosa para errores */
+    color: white;
+}
+
+.alert-warning {
+    background-color: var(--color-principal); /* Rosa para advertencias */
+    color: white;
+}
