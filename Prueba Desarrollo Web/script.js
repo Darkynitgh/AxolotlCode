@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cargar consultas desde LocalStorage
     const cargarConsultas = () => {
         const consultas = JSON.parse(localStorage.getItem("consultas")) || [];
+        
+        // Ordenar las consultas por fecha ascendente
+        consultas.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
         tablaBody.innerHTML = "";
         consultas.forEach((consulta, index) => {
             const row = `
@@ -14,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${consulta.fecha}</td>
                     <td>${consulta.observaciones || "N/A"}</td>
                     <td>
-            <button class="btn-editar btn-sm editar">Editar</button>
-            <button class="btn-eliminar btn-sm eliminar">Eliminar</button>
-        </td>
+                        <button class="btn-editar btn-sm editar">Editar</button>
+                        <button class="btn-eliminar btn-sm eliminar">Eliminar</button>
+                    </td>
                 </tr>`;
             tablaBody.innerHTML += row;
         });
